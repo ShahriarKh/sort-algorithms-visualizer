@@ -1,6 +1,6 @@
 import Head from "next/head";
 import css from "@/styles/Home.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { bubbleSort } from "@/utils/bubblesort";
 import { bucketSort } from "@/utils/bucketSort";
 import { countingSort } from "@/utils/countingsort";
@@ -14,8 +14,12 @@ export default function Home() {
   }
 
   const [isSorting, setIsSorting] = useState(false);
-  const [quantity, setQuantity] = useState(40);
-  const [numbers, setNumbers] = useState(generateRandomNumbers);
+  const [quantity, setQuantity] = useState(120);
+  const [numbers, setNumbers] = useState([]);
+
+  useEffect(() => {
+    setNumbers(generateRandomNumbers);
+  }, []);
 
   return (
     <>
