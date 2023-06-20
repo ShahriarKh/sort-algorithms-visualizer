@@ -24,8 +24,7 @@ export async function bucketSort(numbers, setNumbers, setIsSorting) {
     if (bucket[j].length > 0) {
       sortedNumbers = sortedNumbers.concat(bucket[j]);
     }
-    await task(sortedNumbers);
-    console.log(sortedNumbers); // Log the updated numbersay after each iteration
+    await task();
   }
 
   setIsSorting(false);
