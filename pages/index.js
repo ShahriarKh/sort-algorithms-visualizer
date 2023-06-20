@@ -2,6 +2,10 @@ import Head from "next/head";
 import css from "@/styles/Home.module.css";
 import { useEffect, useState } from "react";
 import { bubbleSort } from "@/utils/bubblesort";
+import { bucketSort } from "@/utils/bucketSort";
+import { countingSort } from "@/utils/countingsort";
+import { insertionSort } from "@/utils/insertiondort";
+import { selectionSort } from "@/utils/selectionsort";
 
 export default function Home() {
   function generateRandomNumbers() {
@@ -9,8 +13,8 @@ export default function Home() {
   }
 
   const [isSorting, setIsSorting] = useState(false);
-  const [quantity, setQuantity] = useState(12);
-  const [numbers, setNumbers] = useState(generateRandomNumbers(12));
+  const [quantity, setQuantity] = useState(80);
+  const [numbers, setNumbers] = useState(generateRandomNumbers);
 
   return (
     <>
@@ -28,10 +32,11 @@ export default function Home() {
                 key={index}
                 className={css.number}
                 style={{
-                  height: `${number * 20}px`,
+                  width: `${(1 / quantity) * 80}%`,
+                  height: `${(number / quantity) * 300 + 20}px`,
                   background: `linear-gradient(to top right, hsl(${
                     (number * 360) / Math.max(...numbers)
-                  }, 80%, 50%), hsl(${(number * 360) / Math.max(...numbers) + 15}, 70%, 50%))`,
+                  }, 60%, 50%), hsl(${(number * 320) / Math.max(...numbers)}, 40%, 50%))`,
                 }}
               >
                 {number}
@@ -46,10 +51,20 @@ export default function Home() {
           <button disabled={isSorting} onClick={() => setNumbers(generateRandomNumbers)}>
             Generate random numbers
           </button>
-          <button disabled={isSorting}>Bucket sort</button>
+          {/* <button disabled={isSorting} onClick={() => bucketSort(numbers, setNumbers, setIsSorting)}> */}
+          {/* Bucket sort */}
+          {/* </button> */}
+          <button disabled={isSorting} onClick={() => countingSort(numbers, setNumbers, setIsSorting)}>
+            Counting sort
+          </button>
+          <button disabled={isSorting} onClick={() => insertionSort(numbers, setNumbers, setIsSorting)}>
+            Insertion sort
+          </button>
           <button disabled={isSorting}>Merge sort</button>
           <button disabled={isSorting}>Quick sort</button>
-          <button disabled={isSorting}>Selection sort</button>
+          <button disabled={isSorting} onClick={() => selectionSort(numbers, setNumbers, setIsSorting)}>
+            Selection sort
+          </button>
         </div>
       </main>
     </>
