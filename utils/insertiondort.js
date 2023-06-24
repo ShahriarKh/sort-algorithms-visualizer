@@ -1,7 +1,7 @@
 import { timer } from "./shared";
 
 export async function insertionSort(numbers, setNumbers, setIsSorting) {
-  let iterationTime = 50;
+  let iterationTime = 100;
 
   setIsSorting(true);
 

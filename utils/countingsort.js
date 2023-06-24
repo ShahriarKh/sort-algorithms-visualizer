@@ -2,7 +2,7 @@ import { timer } from "./shared";
 
 export async function countingSort(numbers, setNumbers, setIsSorting) {
   // let iterationTime = Math.max(1000, numbers.length / 30000);
-  let iterationTime = 50;
+  let iterationTime = 100;
 
   setIsSorting(true);
 

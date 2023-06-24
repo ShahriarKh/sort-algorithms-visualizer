@@ -2,7 +2,7 @@ import { timer } from "./shared";
 
 export async function bubbleSort(numbers, setNumbers, setIsSorting) {
   // let iterationTime = Math.max(150, numbers.length / 30000);
-  let iterationTime = 5;
+  let iterationTime = 75;
   setIsSorting(true);
 
   async function task() {

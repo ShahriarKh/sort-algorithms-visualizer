@@ -26,3 +26,33 @@
   justify-content: center;
   gap: 12px;
 }
+
+.btn {
+  margin-top: 20px;
+  text-align: center;
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 0 5px;
+  background: linear-gradient(to right, #ee7752, #e73c7e);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  border: 2px solid;
+  border-image-slice: 1;
+  border-width: 2px;
+  border-image-source: linear-gradient(to right, #ee7752, #e73c7e);
+  border-image-repeat: stretch;
+  border-image-width: 100%;
+  border-radius: 5px; /* Initial border-radius */
+  transition: background-color 0.3s ease, border-radius 0.5s ease; /* Added transition for border-radius */
+  font-family: "Arial", sans-serif;
+}
+
+.btn:hover {
+  .button:hover {
+    background-color: #f95678;
+    border-radius: 25px;
+  }
+}

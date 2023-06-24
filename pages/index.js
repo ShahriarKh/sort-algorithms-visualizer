@@ -14,7 +14,7 @@ export default function Home() {
   }
 
   const [isSorting, setIsSorting] = useState(false);
-  const [quantity, setQuantity] = useState(120);
+  const [quantity, setQuantity] = useState(50);
   const [numbers, setNumbers] = useState([]);
 
   useEffect(() => {
@@ -50,26 +50,26 @@ export default function Home() {
           })}
         </div>
         <div className={css.buttons}>
-          <button disabled={isSorting} onClick={() => setNumbers(generateRandomNumbers)}>
+          <button className={css.btn} disabled={isSorting} onClick={() => setNumbers(generateRandomNumbers)}>
             Generate random numbers
           </button>
-          <button disabled={isSorting} onClick={() => bubbleSort(numbers, setNumbers, setIsSorting)}>
+          <button className={css.btn} disabled={isSorting} onClick={() => bubbleSort(numbers, setNumbers, setIsSorting)}>
             Bubble sort
           </button>
-          <button disabled={isSorting} onClick={() => bucketSort(numbers, setNumbers, setIsSorting)}>
+          <button className={css.btn} disabled={isSorting} onClick={() => bucketSort(numbers, setNumbers, setIsSorting)}>
             Bucket sort
           </button>
-          <button disabled={isSorting} onClick={() => countingSort(numbers, setNumbers, setIsSorting)}>
+          <button className={css.btn} disabled={isSorting} onClick={() => countingSort(numbers, setNumbers, setIsSorting)}>
             Counting sort
           </button>
-          <button disabled={isSorting} onClick={() => insertionSort(numbers, setNumbers, setIsSorting)}>
+          <button className={css.btn} disabled={isSorting} onClick={() => insertionSort(numbers, setNumbers, setIsSorting)}>
             Insertion sort
           </button>
           {/* <button disabled={isSorting}>Merge sort</button> */}
           {/* <button disabled={isSorting} onClick={() => quickSort(numbers, setNumbers, setIsSorting)}>
             Quick sort
           </button> */}
-          <button disabled={isSorting} onClick={() => selectionSort(numbers, setNumbers, setIsSorting)}>
+          <button className={css.btn} disabled={isSorting} onClick={() => selectionSort(numbers, setNumbers, setIsSorting)}>
             Selection sort
           </button>
         </div>
